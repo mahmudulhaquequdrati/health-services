@@ -1,0 +1,78 @@
+.header::after {
+  content: "";
+  color: white !important;
+  background-color: rgba(38, 43, 65, 0.849);
+  height: 120vh;
+  width: 30%;
+  display: block;
+  position: absolute;
+  float: right;
+  right: 0;
+  top: 0;
+}
+
+.appointmentheader::after {
+  content: "";
+  background-color: rgba(38, 43, 65, 0.849);
+  height: 16vh;
+  width: 33%;
+  display: block;
+  position: absolute;
+  float: right;
+  right: 0;
+  top: 0;
+}
+.blogs {
+  background: linear-gradient(to right, #19d3b1, #0fcfe9) !important;
+}
+.responsiveToolbar {
+  display: none !important;
+}
+.HeaderLink a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+  .header::after {
+    content: "";
+    background-color: rgba(2, 2, 2, 0.849);
+    height: auto;
+    width: 10%;
+    display: none;
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 0;
+  }
+  .appointmentheader::after {
+    content: "";
+    background-color: rgba(38, 43, 65, 0.849);
+    height: 15vh;
+    width: 35%;
+    display: none;
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 0;
+  }
+  .responsiveToolbar {
+    display: block !important;
+    position: fixed !important;
+    padding: 80px;
+    padding-left: 40px !important;
+    left: -100%;
+    background-color: lightblue !important;
+    height: 100vh !important;
+    width: 40%;
+    top: 0;
+    transition: 0.4s;
+  }
+  .responsiveToolbar.extraTool {
+    left: 0 !important;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .reviewTxt {
+    color: gray !important;
+  }
+}
