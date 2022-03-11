@@ -35,12 +35,17 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
       price: price,
       date: date.toLocaleDateString(),
     };
-    axios.post("http://localhost:5000/appointments", newData).then((res) => {
-      if (res.data.insertedId) {
-        // alert("successfully ordered! go to dashboard for payment!");
-        handleClose();
-      }
-    });
+    axios
+      .post(
+        "https://health-services-server.herokuapp.com/appointments",
+        newData
+      )
+      .then((res) => {
+        if (res.data.insertedId) {
+          // alert("successfully ordered! go to dashboard for payment!");
+          handleClose();
+        }
+      });
   };
 
   return (

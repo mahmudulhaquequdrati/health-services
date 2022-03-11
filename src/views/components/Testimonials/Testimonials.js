@@ -8,9 +8,11 @@ import Testimonial from "./Testimonial/Testimonial";
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/reviews").then((res) => {
-      setTestimonials(res.data);
-    });
+    axios
+      .get("https://health-services-server.herokuapp.com/reviews")
+      .then((res) => {
+        setTestimonials(res.data);
+      });
   }, []);
   return (
     <div id="review">

@@ -7,9 +7,11 @@ const AppointmentList = ({ date }) => {
   const [appointments, setappointments] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/appointments").then((res) => {
-      setappointments(res.data);
-    });
+    axios
+      .get("https://health-services-server.herokuapp.com/appointments")
+      .then((res) => {
+        setappointments(res.data);
+      });
   }, []);
   return (
     <div>

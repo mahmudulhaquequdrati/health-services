@@ -102,16 +102,18 @@ const useFirebase = () => {
   // save user for database
   const saveUser = (email, displayName, phone) => {
     const user = { email, displayName, phone };
-    axios.post("http://localhost:5000/users", user).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .post("https://health-services-server.herokuapp.com/users", user)
+      .then((res) => {});
   };
 
   // get admin from database
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/${user.email}`).then((res) => {
-      setisAdmin(res.data.admin);
-    });
+    axios
+      .get(`https://health-services-server.herokuapp.com/user/${user.email}`)
+      .then((res) => {
+        setisAdmin(res.data.admin);
+      });
   }, [user.email]);
 
   // end all the nesccessary things

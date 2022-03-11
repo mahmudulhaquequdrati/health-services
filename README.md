@@ -2,18 +2,6 @@
 
 Its a live project form where you can book appointment for you or your family.
 <br/>
-<br/>
-_this project is [live here](http://www.google2.fr/ "project link")_
-
-```
-website url from firebase
-```
-
-_This project is running from [server](http://www.google.fr/ "server code")_
-
-```
-express server github code
-```
 
 _Technology I have used for this project_ :
 
@@ -22,7 +10,45 @@ _Technology I have used for this project_ :
  - express,                - mongodb,
  - firebase,               - materiul ui,
  - react-hook-form,        - axios,
- - context api
+ - context api             - jwt
+ - stripe
+```
+
+<br/>
+
+this is what an user can do
+<br/>
+
+```
+-- user can book an appointment
+-- appointment will be filtered by date
+-- after successfully booking then user can pay for his appointment
+-- User can check his appointment on dashboard and track his order
+```
+
+<br/>
+this is what an admin can do
+
+```
+-- admin can delete any appointments that booked by an user
+-- admin can delete an user
+-- admin can make some other admin
+-- admins action is verifying with JWT
+```
+
+<br/>
+<br/>
+
+_this project is [live here](https://your-health-treatment.web.app/ "project url")_
+
+```
+https://your-health-treatment.web.app/
+```
+
+_This project is running from [server](https://github.com/mahmudulhaquequdrati/health-services-server "server code")_
+
+```
+https://github.com/mahmudulhaquequdrati/health-services-server
 ```
 
 _For more info visit: [My Protfolio]('https://mahmudulhaquequdrati.com')_

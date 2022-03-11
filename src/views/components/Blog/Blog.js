@@ -18,9 +18,11 @@ const Blog = () => {
   const classes = useStyle();
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/blogs").then((res) => {
-      setBlogs(res.data);
-    });
+    axios
+      .get("https://health-services-server.herokuapp.com/blogs")
+      .then((res) => {
+        setBlogs(res.data);
+      });
   }, []);
   return (
     <div id="blogs">

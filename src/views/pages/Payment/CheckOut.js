@@ -2,7 +2,7 @@ import { CircularProgress } from "@mui/material";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 
 const CheckOut = ({ userInfo }) => {
@@ -15,12 +15,14 @@ const CheckOut = ({ userInfo }) => {
   const { user } = useAuth();
   const stripe = useStripe();
   const elements = useElements();
-  // const newPrice = parseInt(price);
 
   // load client secret
   useEffect(() => {
     axios
-      .post("http://localhost:5000/create-payment-intent", { price })
+      .post(
+        "https://health-services-server.herokuapp.com/create-payment-intent",
+        { price }
+      )
       .then((res) => {
         setClientSecret(res.data.clientSecret);
       });
@@ -55,7 +57,6 @@ const CheckOut = ({ userInfo }) => {
       setSuccess("");
     } else {
       setError("");
-      console.log("[PaymentMethod]", paymentMethod);
     }
 
     // confirm card payment intent
@@ -75,7 +76,6 @@ const CheckOut = ({ userInfo }) => {
     } else {
       setError("");
       setSuccess("Your Payment process successfuly!");
-      console.log(paymentIntent);
       setProcessing(false);
 
       // payment confirmed
@@ -86,7 +86,10 @@ const CheckOut = ({ userInfo }) => {
 
       // now we will update info to database
       axios
-        .put(`http://localhost:5000/appointment/${_id}`, payment)
+        .put(
+          `https://health-services-server.herokuapp.com/appointment/${_id}`,
+          payment
+        )
         .then((res) => {
           if (res.data.modifiedCount) {
             navigate("/dashboard/appointment");
