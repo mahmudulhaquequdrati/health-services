@@ -21,6 +21,7 @@ const Featured = () => {
             sx={{
               width: { lg: "80%", sm: "80%" },
               marginX: "auto",
+
               marginTop: "-120px",
             }}
           >

@@ -1,7 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import aboutImg from "../../../assests/images/treatment.png";
+import aboutImg from "../../../assests/images/about.png";
 
 const AboutServices = () => {
   return (
@@ -16,7 +16,7 @@ const AboutServices = () => {
             sx={{
               paddingLeft: { xs: "2rem", sm: "3rem", md: "5rem", lg: "5rem" },
               width: "75%",
-              marginX: { sx: "auto", sm: "auto", md: "0", lg: "0" },
+              marginX: { xs: "auto", sm: "auto", md: "0", lg: "0" },
             }}
           >
             <img
@@ -35,7 +35,7 @@ const AboutServices = () => {
                 fontSize: { xs: "36px", md: "36px", lg: "42px" },
                 mb: 3,
                 fontWeight: "500",
-                mt: { lg: 5, md: 1 },
+                mt: { lg: 3, md: 1 },
                 textAlign: { xs: "center", sm: "center", md: "left" },
               }}
             >
@@ -51,13 +51,12 @@ const AboutServices = () => {
                 textAlign: { xs: "center", sm: "center", md: "left" },
               }}
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
-              odio saepe quaerat earum recusandae aliquam cum voluptatum ullam
-              ex voluptas aut inventore omnis iusto iste alias, perferendis, eum
-              exercitationem accusantium eaque! Voluptatum inventore,
-              voluptatibus nobis non repellat delectus ex quidem totam
-              consectetur provident. Numquam placeat in, saepe ipsum ullam
-              perferendis.
+              The need for speed is a major reason why the government chose to
+              work with retail clinics that are more accessible than most
+              primary care offices. However, the American Medical Association
+              (AMA), the National Community Pharmacists Association (NCPA), and
+              the American Pharmacists Association (APhA) have criticized the
+              administration's approach.
             </Typography>
             <Box
               sx={{

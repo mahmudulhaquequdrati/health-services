@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/styles";
 import "../../../styles/global.css";
 import { Button, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import headerImg from "../../../assests/images/chair.png";
+import headerImg from "../../../assests/images/headerIMG.png";
 import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
@@ -57,9 +57,9 @@ const Header = () => {
                   width: { sm: "90%", md: "70%" },
                 }}
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-                rerum, sed pariatur nesciunt eum deserunt doloribus iusto
-                exercitationem fugiat
+                One large doctors’ group is concerned that the program leaves
+                doctors on the margins, and may put patients at risk if there
+                are side effects from the drugs.
               </Typography>
               <Link
                 style={{
@@ -87,7 +87,7 @@ const Header = () => {
           <Box
             sx={{
               display: "flex",
-              width: { sm: "70%", md: "100%" },
+              width: { xs: "90%", sm: "70%", md: "70%", lg: "80%" },
               height: { sm: "auto", md: "85vh" },
               justifyContent: {
                 sx: "center",
@@ -96,16 +96,15 @@ const Header = () => {
                 lg: "left",
               },
               paddingBottom: { xs: "30px", sm: "30px", md: "0", lg: "0" },
-              marginX: "auto",
+              marginX: { xs: "auto", sm: "auto", md: "auto", lg: "0" },
               alignItems: "center",
+              marginTop: { xs: "10px", sm: "10px", md: "20px", lg: "30px" },
             }}
           >
             <img
-              sx={{}}
               style={{
                 zIndex: "11",
-                width: "90%",
-                margin: "0 auto ",
+                width: "100%",
               }}
               src={headerImg}
               alt=""
