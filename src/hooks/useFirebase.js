@@ -102,6 +102,7 @@ const useFirebase = () => {
   // save user for database
   const saveUser = (email, displayName, phone) => {
     const user = { email, displayName, phone };
+
     axios
       .post("https://health-services-server.herokuapp.com/users", user)
       .then((res) => {});
