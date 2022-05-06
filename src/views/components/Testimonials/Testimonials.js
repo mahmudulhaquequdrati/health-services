@@ -1,19 +1,34 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import bg from "../../../assests/icons/bg.png";
 import Testimonial from "./Testimonial/Testimonial";
+import { useDispatch, useSelector } from "react-redux";
+import { getTestimonials } from "../../../redux/slices/testimonialSlice";
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
+  // const [testimonials, setTestimonials] = useState([]);
+
+  // ? redux initials
+  const dispatch = useDispatch();
+  // ? data from redux
+  const testimonials = useSelector(
+    (state) => state?.testimonials?.testimonialsList
+  );
+  // console.log(testimonials2);
+  // ? api calling function for redux
   useEffect(() => {
-    axios
-      .get("https://health-services-server.herokuapp.com/reviews")
-      .then((res) => {
-        setTestimonials(res.data);
-      });
-  }, []);
+    // * don't forget to dispatch always to make an action for redux
+    dispatch(getTestimonials());
+  }, [dispatch]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("https://health-services-server.herokuapp.com/reviews")
+  //     .then((res) => {
+  //       setTestimonials(res.data);
+  //     });
+  // }, []);
   return (
     <div id="review">
       <Box
