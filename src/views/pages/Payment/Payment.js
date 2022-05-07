@@ -15,9 +15,7 @@ const Payment = () => {
   const { appointmentID } = useParams();
   useEffect(() => {
     axios
-      .get(
-        `https://health-services-server.herokuapp.com/appointment/${appointmentID}`
-      )
+      .get(`http://localhost:5000/appointment/${appointmentID}`)
       .then((res) => {
         setUserInfo(res.data);
       });

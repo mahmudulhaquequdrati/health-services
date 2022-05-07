@@ -24,7 +24,7 @@ const Testimonials = () => {
 
   // useEffect(() => {
   //   axios
-  //     .get("https://health-services-server.herokuapp.com/reviews")
+  //     .get("http://localhost:5000/reviews")
   //     .then((res) => {
   //       setTestimonials(res.data);
   //     });

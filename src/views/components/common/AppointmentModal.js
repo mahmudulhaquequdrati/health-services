@@ -4,9 +4,10 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import BasicModal from "./BookSuccess";
 import useAuth from "../../../hooks/useAuth";
+import { useDispatch } from "react-redux";
+import { postAppointment } from "../../../redux/slices/appointmentSlice";
 
 const style = {
   position: "absolute",
@@ -27,6 +28,9 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
   const { name, time, price } = appointment;
   const { user } = useAuth();
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
+  // useSelector()
+
   const onSubmit = (data) => {
     const newData = {
       ...data,
@@ -35,17 +39,23 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
       price: price,
       date: date.toLocaleDateString(),
     };
-    axios
-      .post(
-        "https://health-services-server.herokuapp.com/appointments",
-        newData
-      )
-      .then((res) => {
-        if (res.data.insertedId) {
-          // alert("successfully ordered! go to dashboard for payment!");
-          handleClose();
-        }
-      });
+    // console.log(newData);
+    const dataForApp = {
+      newData: newData,
+      handleClose: handleClose,
+    };
+    dispatch(postAppointment(dataForApp));
+    // axios
+    //   .post(
+    //     "http://localhost:5000/appointments",
+    //     newData
+    //   )
+    //   .then((res) => {
+    //     if (res.data.insertedId) {
+    //       // alert("successfully ordered! go to dashboard for payment!");
+    //       handleClose();
+    //     }
+    //   });
   };
 
   return (

@@ -19,13 +19,9 @@ const MakeAdmin = () => {
     };
 
     axios
-      .put(
-        "https://health-services-server.herokuapp.com/users/makeAdmin",
-        user,
-        {
-          headers: headers,
-        }
-      )
+      .put("http://localhost:5000/users/makeAdmin", user, {
+        headers: headers,
+      })
       .then((res) => {
         if (res.data.modifiedCount) {
           alert("successfully admin created!");

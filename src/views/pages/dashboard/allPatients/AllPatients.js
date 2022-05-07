@@ -15,25 +15,21 @@ import axios from "axios";
 const AllPatients = () => {
   const [allpatients, setAllpatients] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://health-services-server.herokuapp.com/patients")
-      .then((res) => {
-        setAllpatients(res.data);
-      });
+    axios.get("http://localhost:5000/patients").then((res) => {
+      setAllpatients(res.data);
+    });
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`https://health-services-server.herokuapp.com/patients/${id}`)
-      .then((res) => {
-        if (res.data.deletedCount) {
-          alert("successfully appointment deleted");
-          const remainingPatients = allpatients.filter(
-            (allapp) => allapp._id !== id
-          );
-          setAllpatients(remainingPatients);
-        }
-      });
+    axios.delete(`http://localhost:5000/patients/${id}`).then((res) => {
+      if (res.data.deletedCount) {
+        alert("successfully appointment deleted");
+        const remainingPatients = allpatients.filter(
+          (allapp) => allapp._id !== id
+        );
+        setAllpatients(remainingPatients);
+      }
+    });
   };
   return (
     <Box>

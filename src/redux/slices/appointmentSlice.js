@@ -4,10 +4,21 @@ import axios from "axios";
 export const getAppointments = createAsyncThunk(
   "appointmentsData",
   async () => {
-    const result = await axios.get(
-      "https://health-services-server.herokuapp.com/appointments"
-    );
+    const result = await axios.get("http://localhost:5000/appointments");
     return result.data;
+  }
+);
+
+export const postAppointment = createAsyncThunk(
+  "postAppointment",
+  async (newData) => {
+    await axios
+      .post("http://localhost:5000/appointments", newData.newData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          newData.handleClose();
+        }
+      });
   }
 );
 

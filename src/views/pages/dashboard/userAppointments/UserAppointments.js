@@ -17,7 +17,7 @@ export default function UserAppointments({ date }) {
   useEffect(() => {
     axios
       .get(
-        `https://health-services-server.herokuapp.com/userappointmentsED?email=${
+        `http://localhost:5000/userappointmentsED?email=${
           user.email
         }&date=${date.toLocaleDateString()}`,
         {

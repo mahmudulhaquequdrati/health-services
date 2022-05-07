@@ -13,31 +13,25 @@ const DashboardHome = () => {
   const date = new Date();
   useEffect(() => {
     axios
-      .get(
-        `https://health-services-server.herokuapp.com/userTotalAppointment?email=${user.email}`
-      )
+      .get(`http://localhost:5000/userTotalAppointment?email=${user.email}`)
       .then((res) => {
         setUserAppointments(res.data);
       });
   }, [user.email]);
   useEffect(() => {
-    axios
-      .get(`https://health-services-server.herokuapp.com/patients`)
-      .then((res) => {
-        setPatients(res.data);
-      });
+    axios.get(`http://localhost:5000/patients`).then((res) => {
+      setPatients(res.data);
+    });
   }, []);
   useEffect(() => {
-    axios
-      .get(`https://health-services-server.herokuapp.com/userAppointments`)
-      .then((res) => {
-        setTotalUserAppointments(res.data);
-      });
+    axios.get(`http://localhost:5000/userAppointments`).then((res) => {
+      setTotalUserAppointments(res.data);
+    });
   }, []);
   useEffect(() => {
     axios
       .get(
-        `https://health-services-server.herokuapp.com/todaysAppointment?date=${date.toLocaleDateString()}`
+        `http://localhost:5000/todaysAppointment?date=${date.toLocaleDateString()}`
       )
       .then((res) => {
         settodaysAppointment(res.data);

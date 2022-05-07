@@ -32,7 +32,7 @@ const Blog = () => {
   // * normal one
   // useEffect(() => {
   //   axios
-  //     .get("https://health-services-server.herokuapp.com/blogs")
+  //     .get("http://localhost:5000/blogs")
   //     .then((res) => {
   //       setBlogs(res.data);
   //     });

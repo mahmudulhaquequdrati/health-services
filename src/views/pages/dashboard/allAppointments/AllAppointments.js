@@ -15,25 +15,21 @@ import React, { useEffect, useState } from "react";
 const AllAppointments = () => {
   const [allappointments, setAllappointments] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://health-services-server.herokuapp.com/userAppointments")
-      .then((res) => {
-        setAllappointments(res.data);
-      });
+    axios.get("http://localhost:5000/userAppointments").then((res) => {
+      setAllappointments(res.data);
+    });
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`https://health-services-server.herokuapp.com/appointment/${id}`)
-      .then((res) => {
-        if (res.data.deletedCount) {
-          alert("successfully appointment deleted");
-          const remainingAppointments = allappointments.filter(
-            (allapp) => allapp._id !== id
-          );
-          setAllappointments(remainingAppointments);
-        }
-      });
+    axios.delete(`http://localhost:5000/appointment/${id}`).then((res) => {
+      if (res.data.deletedCount) {
+        alert("successfully appointment deleted");
+        const remainingAppointments = allappointments.filter(
+          (allapp) => allapp._id !== id
+        );
+        setAllappointments(remainingAppointments);
+      }
+    });
   };
   return (
     <Box>
