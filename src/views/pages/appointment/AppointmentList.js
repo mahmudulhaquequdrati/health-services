@@ -15,7 +15,7 @@ const AppointmentList = ({ date }) => {
   }, [dispatch]);
   // useEffect(() => {
   //   axios
-  //     .get("http://localhost:5000/appointments")
+  //     .get("https://health-services-server.herokuapp.com/appointments")
   //     .then((res) => {
   //       setappointments(res.data);
   //     });

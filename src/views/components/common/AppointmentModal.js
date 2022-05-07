@@ -47,7 +47,7 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
     dispatch(postAppointment(dataForApp));
     // axios
     //   .post(
-    //     "http://localhost:5000/appointments",
+    //     "https://health-services-server.herokuapp.com/appointments",
     //     newData
     //   )
     //   .then((res) => {

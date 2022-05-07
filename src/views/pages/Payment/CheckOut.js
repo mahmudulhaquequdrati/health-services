@@ -19,7 +19,10 @@ const CheckOut = ({ userInfo }) => {
   // load client secret
   useEffect(() => {
     axios
-      .post("http://localhost:5000/create-payment-intent", { price })
+      .post(
+        "https://health-services-server.herokuapp.com/create-payment-intent",
+        { price }
+      )
       .then((res) => {
         setClientSecret(res.data.clientSecret);
       });
@@ -83,7 +86,10 @@ const CheckOut = ({ userInfo }) => {
 
       // now we will update info to database
       axios
-        .put(`http://localhost:5000/appointment/${_id}`, payment)
+        .put(
+          `https://health-services-server.herokuapp.com/appointment/${_id}`,
+          payment
+        )
         .then((res) => {
           if (res.data.modifiedCount) {
             navigate("/dashboard/appointment");

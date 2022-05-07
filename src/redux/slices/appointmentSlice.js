@@ -4,7 +4,9 @@ import axios from "axios";
 export const getAppointments = createAsyncThunk(
   "appointmentsData",
   async () => {
-    const result = await axios.get("http://localhost:5000/appointments");
+    const result = await axios.get(
+      "https://health-services-server.herokuapp.com/appointments"
+    );
     return result.data;
   }
 );
@@ -13,7 +15,10 @@ export const postAppointment = createAsyncThunk(
   "postAppointment",
   async (newData) => {
     await axios
-      .post("http://localhost:5000/appointments", newData.newData)
+      .post(
+        "https://health-services-server.herokuapp.com/appointments",
+        newData.newData
+      )
       .then((res) => {
         if (res.data.insertedId) {
           newData.handleClose();
