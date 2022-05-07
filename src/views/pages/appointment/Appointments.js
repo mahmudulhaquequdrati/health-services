@@ -21,7 +21,6 @@ const Appointments = () => {
           py: 6,
           backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
-          // backgroundColor: "darkgray",
         }}
       >
         <Grid

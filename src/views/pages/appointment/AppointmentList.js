@@ -1,18 +1,25 @@
 import { Grid } from "@mui/material";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAppointments } from "../../../redux/slices/appointmentSlice";
 import SingleAPPList from "./SingleAPPList";
 
 const AppointmentList = ({ date }) => {
-  const [appointments, setappointments] = useState([]);
-
+  // const [appointments, setappointments] = useState([]);
+  const dispatch = useDispatch();
+  const appointments = useSelector(
+    (state) => state?.appointments?.appointmentsList
+  );
   useEffect(() => {
-    axios
-      .get("https://health-services-server.herokuapp.com/appointments")
-      .then((res) => {
-        setappointments(res.data);
-      });
-  }, []);
+    dispatch(getAppointments());
+  }, [dispatch]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://health-services-server.herokuapp.com/appointments")
+  //     .then((res) => {
+  //       setappointments(res.data);
+  //     });
+  // }, []);
   return (
     <div>
       <Grid

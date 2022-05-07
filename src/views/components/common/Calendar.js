@@ -8,7 +8,6 @@ import { Paper } from "@mui/material";
 const Calendar = ({ date, setDate }) => {
   return (
     <Paper elevation={0}>
-      {" "}
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <StaticDatePicker
           displayStaticWrapperAs="desktop"
