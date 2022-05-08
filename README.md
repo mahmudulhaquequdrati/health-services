@@ -29,7 +29,7 @@ _Technology I have used for this project_ :
  - firebase,               - materiul ui,
  - react-hook-form,        - axios,
  - context api             - jwt
- - stripe
+ - stripe                  - redux
 ```
 
 <br/>
