@@ -196,7 +196,13 @@ const NavBar = () => {
           </Link>
         )}
         {user?.email ? (
-          <Box>
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: 35,
+              border: "1px solid red",
+            }}
+          >
             <button
               onClick={logOut}
               style={{
@@ -206,6 +212,8 @@ const NavBar = () => {
                 cursor: "pointer",
                 padding: "2px 7px",
                 borderRadius: "3px",
+                position: "absolute",
+                bottom: 35,
               }}
             >
               <LogoutIcon />
