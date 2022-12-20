@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getBlogs = createAsyncThunk("blogs/getBlogs", async () => {
   const result = await axios.get(
-    "https://health-services-server.herokuapp.com/blogs"
+    "https://health-services-server-production.up.railway.app/blogs"
   );
   return result.data;
 });

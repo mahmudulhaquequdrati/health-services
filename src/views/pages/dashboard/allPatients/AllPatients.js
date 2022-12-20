@@ -16,7 +16,7 @@ const AllPatients = () => {
   const [allpatients, setAllpatients] = useState([]);
   useEffect(() => {
     axios
-      .get("https://health-services-server.herokuapp.com/patients")
+      .get("https://health-services-server-production.up.railway.app/patients")
       .then((res) => {
         setAllpatients(res.data);
       });
@@ -24,7 +24,9 @@ const AllPatients = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://health-services-server.herokuapp.com/patients/${id}`)
+      .delete(
+        `https://health-services-server-production.up.railway.app/patients/${id}`
+      )
       .then((res) => {
         if (res.data.deletedCount) {
           alert("successfully appointment deleted");

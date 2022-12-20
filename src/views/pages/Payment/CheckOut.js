@@ -20,7 +20,7 @@ const CheckOut = ({ userInfo }) => {
   useEffect(() => {
     axios
       .post(
-        "https://health-services-server.herokuapp.com/create-payment-intent",
+        "https://health-services-server-production.up.railway.app/create-payment-intent",
         { price }
       )
       .then((res) => {
@@ -87,7 +87,7 @@ const CheckOut = ({ userInfo }) => {
       // now we will update info to database
       axios
         .put(
-          `https://health-services-server.herokuapp.com/appointment/${_id}`,
+          `https://health-services-server-production.up.railway.app/appointment/${_id}`,
           payment
         )
         .then((res) => {

@@ -5,7 +5,7 @@ export const getTestimonials = createAsyncThunk(
   "testimonialsData",
   async () => {
     const result = await axios.get(
-      "https://health-services-server.herokuapp.com/reviews"
+      "https://health-services-server-production.up.railway.app/reviews"
     );
     return result.data;
   }

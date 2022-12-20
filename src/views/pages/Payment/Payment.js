@@ -16,7 +16,7 @@ const Payment = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-services-server.herokuapp.com/appointment/${appointmentID}`
+        `https://health-services-server-production.up.railway.app/appointment/${appointmentID}`
       )
       .then((res) => {
         setUserInfo(res.data);

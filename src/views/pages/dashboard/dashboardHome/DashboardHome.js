@@ -14,7 +14,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-services-server.herokuapp.com/userTotalAppointment?email=${user.email}`
+        `https://health-services-server-production.up.railway.app/userTotalAppointment?email=${user.email}`
       )
       .then((res) => {
         setUserAppointments(res.data);
@@ -22,14 +22,16 @@ const DashboardHome = () => {
   }, [user.email]);
   useEffect(() => {
     axios
-      .get(`https://health-services-server.herokuapp.com/patients`)
+      .get(`https://health-services-server-production.up.railway.app/patients`)
       .then((res) => {
         setPatients(res.data);
       });
   }, []);
   useEffect(() => {
     axios
-      .get(`https://health-services-server.herokuapp.com/userAppointments`)
+      .get(
+        `https://health-services-server-production.up.railway.app/userAppointments`
+      )
       .then((res) => {
         setTotalUserAppointments(res.data);
       });
@@ -37,7 +39,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-services-server.herokuapp.com/todaysAppointment?date=${date.toLocaleDateString()}`
+        `https://health-services-server-production.up.railway.app/todaysAppointment?date=${date.toLocaleDateString()}`
       )
       .then((res) => {
         settodaysAppointment(res.data);

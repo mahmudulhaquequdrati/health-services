@@ -5,7 +5,7 @@ export const getAppointments = createAsyncThunk(
   "appointmentsData",
   async () => {
     const result = await axios.get(
-      "https://health-services-server.herokuapp.com/appointments"
+      "https://health-services-server-production.up.railway.app/appointments"
     );
     return result.data;
   }
@@ -16,7 +16,7 @@ export const postAppointment = createAsyncThunk(
   async (newData) => {
     await axios
       .post(
-        "https://health-services-server.herokuapp.com/appointments",
+        "https://health-services-server-production.up.railway.app/appointments",
         newData.newData
       )
       .then((res) => {

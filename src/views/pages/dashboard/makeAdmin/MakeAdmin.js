@@ -20,7 +20,7 @@ const MakeAdmin = () => {
 
     axios
       .put(
-        "https://health-services-server.herokuapp.com/users/makeAdmin",
+        "https://health-services-server-production.up.railway.app/users/makeAdmin",
         user,
         {
           headers: headers,
