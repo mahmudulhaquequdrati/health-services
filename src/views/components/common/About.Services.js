@@ -1,9 +1,14 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import aboutImg from "../../../assests/images/about.png";
 
 const AboutServices = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/about");
+  };
   return (
     <Box
       sx={{
@@ -74,6 +79,7 @@ const AboutServices = () => {
                   paddingY: "10px",
                   paddingX: "30px",
                 }}
+                onClick={handleNavigate}
               >
                 Learn More
               </Button>

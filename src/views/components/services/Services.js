@@ -2,6 +2,7 @@ import { Button, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { makeStyles } from "@mui/styles";
+import { useNavigate } from "react-router-dom";
 const useStyle = makeStyles({
   services: {
     textAlign: "center",
@@ -27,6 +28,10 @@ const useStyle = makeStyles({
 });
 
 const Services = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/appointment");
+  };
   const classes = useStyle();
   return (
     <Box
@@ -78,6 +83,7 @@ const Services = () => {
                     color: "white",
                     marginX: "auto",
                   }}
+                  onClick={handleNavigate}
                 >
                   Book Now
                 </Button>
@@ -110,6 +116,7 @@ const Services = () => {
                   sx={{
                     color: "white",
                   }}
+                  onClick={handleNavigate}
                 >
                   Book Now
                 </Button>
@@ -135,6 +142,7 @@ const Services = () => {
                   sx={{
                     color: "white",
                   }}
+                  onClick={handleNavigate}
                 >
                   Book Now
                 </Button>

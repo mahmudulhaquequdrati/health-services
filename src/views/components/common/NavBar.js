@@ -14,7 +14,6 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "end",
   },
   appbar: {
-    display: "flex",
     justifyContent: "end",
     marginTop: "30px",
     zIndex: "10",

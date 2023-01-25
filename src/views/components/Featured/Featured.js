@@ -3,8 +3,13 @@ import { Box } from "@mui/system";
 import React from "react";
 import doctor from "../../../assests/images/doctor.png";
 import bg from "../../../assests/images/bg.png";
+import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/appointment");
+  };
   return (
     <Box
       sx={{
@@ -82,6 +87,7 @@ const Featured = () => {
                 background: "linear-gradient(to right, #19D3B1, #0FCFE9)",
                 paddingX: "30px",
               }}
+              onClick={handleNavigate}
             >
               Learn More
             </Button>
