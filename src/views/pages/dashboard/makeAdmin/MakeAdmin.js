@@ -19,13 +19,9 @@ const MakeAdmin = () => {
     };
 
     axios
-      .put(
-        "https://health-services-server-production.up.railway.app/users/makeAdmin",
-        user,
-        {
-          headers: headers,
-        }
-      )
+      .put("https://health-server.vercel.app/users/makeAdmin", user, {
+        headers: headers,
+      })
       .then((res) => {
         if (res.data.modifiedCount) {
           alert("successfully admin created!");

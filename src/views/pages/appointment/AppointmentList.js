@@ -15,7 +15,7 @@ const AppointmentList = ({ date }) => {
   }, [dispatch]);
   // useEffect(() => {
   //   axios
-  //     .get("https://health-services-server-production.up.railway.app/appointments")
+  //     .get("https://health-server.vercel.app/appointments")
   //     .then((res) => {
   //       setappointments(res.data);
   //     });

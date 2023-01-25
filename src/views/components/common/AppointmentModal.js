@@ -47,7 +47,7 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
     dispatch(postAppointment(dataForApp));
     // axios
     //   .post(
-    //     "https://health-services-server-production.up.railway.app/appointments",
+    //     "https://health-server.vercel.app/appointments",
     //     newData
     //   )
     //   .then((res) => {

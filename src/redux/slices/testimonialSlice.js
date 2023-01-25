@@ -4,9 +4,7 @@ import axios from "axios";
 export const getTestimonials = createAsyncThunk(
   "testimonialsData",
   async () => {
-    const result = await axios.get(
-      "https://health-services-server-production.up.railway.app/reviews"
-    );
+    const result = await axios.get("https://health-server.vercel.app/reviews");
     return result.data;
   }
 );

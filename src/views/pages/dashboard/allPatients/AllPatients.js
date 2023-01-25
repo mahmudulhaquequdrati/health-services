@@ -15,18 +15,14 @@ import axios from "axios";
 const AllPatients = () => {
   const [allpatients, setAllpatients] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://health-services-server-production.up.railway.app/patients")
-      .then((res) => {
-        setAllpatients(res.data);
-      });
+    axios.get("https://health-server.vercel.app/patients").then((res) => {
+      setAllpatients(res.data);
+    });
   }, []);
 
   const handleDelete = (id) => {
     axios
-      .delete(
-        `https://health-services-server-production.up.railway.app/patients/${id}`
-      )
+      .delete(`https://health-server.vercel.app/patients/${id}`)
       .then((res) => {
         if (res.data.deletedCount) {
           alert("successfully appointment deleted");

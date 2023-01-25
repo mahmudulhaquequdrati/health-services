@@ -32,7 +32,7 @@ const Blog = () => {
   // * normal one
   // useEffect(() => {
   //   axios
-  //     .get("https://health-services-server-production.up.railway.app/blogs")
+  //     .get("https://health-server.vercel.app/blogs")
   //     .then((res) => {
   //       setBlogs(res.data);
   //     });

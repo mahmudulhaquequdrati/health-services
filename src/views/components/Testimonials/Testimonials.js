@@ -24,7 +24,7 @@ const Testimonials = () => {
 
   // useEffect(() => {
   //   axios
-  //     .get("https://health-services-server-production.up.railway.app/reviews")
+  //     .get("https://health-server.vercel.app/reviews")
   //     .then((res) => {
   //       setTestimonials(res.data);
   //     });
