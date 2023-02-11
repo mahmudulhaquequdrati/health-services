@@ -16,7 +16,7 @@ const AllAppointments = () => {
   const [allappointments, setAllappointments] = useState([]);
   useEffect(() => {
     axios
-      .get("https://health-server.vercel.app/userAppointments")
+      .get("https://health-services.vercel.app/userAppointments")
       .then((res) => {
         setAllappointments(res.data);
       });
@@ -24,7 +24,7 @@ const AllAppointments = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://health-server.vercel.app/appointment/${id}`)
+      .delete(`https://health-services.vercel.app/appointment/${id}`)
       .then((res) => {
         if (res.data.deletedCount) {
           alert("successfully appointment deleted");

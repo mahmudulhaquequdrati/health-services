@@ -19,7 +19,7 @@ const MakeAdmin = () => {
     };
 
     axios
-      .put("https://health-server.vercel.app/users/makeAdmin", user, {
+      .put("https://health-services.vercel.app/users/makeAdmin", user, {
         headers: headers,
       })
       .then((res) => {

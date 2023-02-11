@@ -104,14 +104,14 @@ const useFirebase = () => {
     const user = { email, displayName, phone };
 
     axios
-      .post("https://health-server.vercel.app/users", user)
+      .post("https://health-services.vercel.app/users", user)
       .then((res) => {});
   };
 
   // get admin from database
   useEffect(() => {
     axios
-      .get(`https://health-server.vercel.app/user/${user.email}`)
+      .get(`https://health-services.vercel.app/user/${user.email}`)
       .then((res) => {
         setisAdmin(res.data.admin);
       });

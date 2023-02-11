@@ -17,7 +17,7 @@ export default function UserAppointments({ date }) {
   useEffect(() => {
     axios
       .get(
-        `https://health-server.vercel.app/userappointmentsED?email=${
+        `https://health-services.vercel.app/userappointmentsED?email=${
           user.email
         }&date=${date.toLocaleDateString()}`,
         {

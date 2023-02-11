@@ -19,7 +19,9 @@ const CheckOut = ({ userInfo }) => {
   // load client secret
   useEffect(() => {
     axios
-      .post("https://health-server.vercel.app/create-payment-intent", { price })
+      .post("https://health-services.vercel.app/create-payment-intent", {
+        price,
+      })
       .then((res) => {
         setClientSecret(res.data.clientSecret);
       });
@@ -83,7 +85,7 @@ const CheckOut = ({ userInfo }) => {
 
       // now we will update info to database
       axios
-        .put(`https://health-server.vercel.app/appointment/${_id}`, payment)
+        .put(`https://health-services.vercel.app/appointment/${_id}`, payment)
         .then((res) => {
           if (res.data.modifiedCount) {
             navigate("/dashboard/appointment");

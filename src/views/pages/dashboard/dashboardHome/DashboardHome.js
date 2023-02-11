@@ -14,20 +14,20 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-server.vercel.app/userTotalAppointment?email=${user.email}`
+        `https://health-services.vercel.app/userTotalAppointment?email=${user.email}`
       )
       .then((res) => {
         setUserAppointments(res.data);
       });
   }, [user.email]);
   useEffect(() => {
-    axios.get(`https://health-server.vercel.app/patients`).then((res) => {
+    axios.get(`https://health-services.vercel.app/patients`).then((res) => {
       setPatients(res.data);
     });
   }, []);
   useEffect(() => {
     axios
-      .get(`https://health-server.vercel.app/userAppointments`)
+      .get(`https://health-services.vercel.app/userAppointments`)
       .then((res) => {
         setTotalUserAppointments(res.data);
       });
@@ -35,7 +35,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-server.vercel.app/todaysAppointment?date=${date.toLocaleDateString()}`
+        `https://health-services.vercel.app/todaysAppointment?date=${date.toLocaleDateString()}`
       )
       .then((res) => {
         settodaysAppointment(res.data);
