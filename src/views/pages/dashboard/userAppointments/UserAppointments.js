@@ -28,7 +28,8 @@ export default function UserAppointments({ date }) {
       )
       .then((res) => {
         setAppointments(res.data);
-      });
+      })
+      .catch((err) => console.log(err));
   }, [user.email, date, token]);
   return (
     <TableContainer component={Paper}>

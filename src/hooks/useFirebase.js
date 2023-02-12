@@ -102,7 +102,6 @@ const useFirebase = () => {
   // save user for database
   const saveUser = (email, displayName, phone) => {
     const user = { email, displayName, phone };
-
     axios
       .post("https://health-services.vercel.app/users", user)
       .then((res) => {});
@@ -110,11 +109,13 @@ const useFirebase = () => {
 
   // get admin from database
   useEffect(() => {
-    axios
-      .get(`https://health-services.vercel.app/user/${user.email}`)
-      .then((res) => {
-        setisAdmin(res.data.admin);
-      });
+    if (user.email) {
+      axios
+        .get(`https://health-services.vercel.app/user/${user.email}`)
+        .then((res) => {
+          setisAdmin(res.data.admin);
+        });
+    }
   }, [user.email]);
 
   // end all the nesccessary things
