@@ -9,4 +9,5 @@ export const store = configureStore({
     testimonials: testimonialSlice,
     appointments: appointmentSlice,
   },
+  middleware : (getDefualtMidleware) => getDefualtMidleware().concat()
 });

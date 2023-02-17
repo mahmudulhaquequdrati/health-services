@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getBlogs = createAsyncThunk("blogs/getBlogs", async () => {
-  const result = await axios.get("https://health-services.vercel.app/blogs");
+  const result = await axios.get(
+    "https://health-services-server-iota.vercel.app/blogs"
+  );
   return result.data;
 });
 

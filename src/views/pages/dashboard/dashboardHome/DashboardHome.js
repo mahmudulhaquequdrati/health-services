@@ -14,28 +14,34 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://health-services.vercel.app/userTotalAppointment?email=${user.email}`
+        `https://health-services-server-iota.vercel.app/orders/uersAppointmentOrders?email=${user.email}`
       )
       .then((res) => {
+        // console.log(res.data)
         setUserAppointments(res.data);
       });
   }, [user.email]);
   useEffect(() => {
-    axios.get(`https://health-services.vercel.app/patients`).then((res) => {
-      setPatients(res.data);
-    });
+    axios
+      .get(`https://health-services-server-iota.vercel.app/users/patients`)
+      .then((res) => {
+        setPatients(res.data);
+      });
   }, []);
   useEffect(() => {
     axios
-      .get(`https://health-services.vercel.app/userAppointments`)
+      .get(
+        `https://health-services-server-iota.vercel.app/orders/allAppointmentOrders`
+      )
       .then((res) => {
+        // console.log(res.data)
         setTotalUserAppointments(res.data);
       });
   }, []);
   useEffect(() => {
     axios
       .get(
-        `https://health-services.vercel.app/todaysAppointment?date=${date.toLocaleDateString()}`
+        `https://health-services-server-iota.vercel.app/orders/todayUserOrder?date=${date.toLocaleDateString()}`
       )
       .then((res) => {
         settodaysAppointment(res.data);

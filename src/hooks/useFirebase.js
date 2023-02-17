@@ -103,20 +103,26 @@ const useFirebase = () => {
   const saveUser = (email, displayName, phone) => {
     const user = { email, displayName, phone };
     axios
-      .post("https://health-services.vercel.app/users", user)
+      .post(
+        "https://health-services-server-iota.vercel.app/users/patients",
+        user
+      )
       .then((res) => {});
   };
 
   // get admin from database
   useEffect(() => {
-    if (user.email) {
+    if (user?.email) {
       axios
-        .get(`https://health-services.vercel.app/user/${user.email}`)
+        .get(
+          `https://health-services-server-iota.vercel.app/users/${user.email}`
+        )
         .then((res) => {
+          // console.log(res.data)
           setisAdmin(res.data.admin);
         });
     }
-  }, [user.email]);
+  }, [user?.email]);
 
   // end all the nesccessary things
   return {

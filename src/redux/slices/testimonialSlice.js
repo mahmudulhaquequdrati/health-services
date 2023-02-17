@@ -5,7 +5,7 @@ export const getTestimonials = createAsyncThunk(
   "testimonialsData",
   async () => {
     const result = await axios.get(
-      "https://health-services.vercel.app/reviews"
+      "https://health-services-server-iota.vercel.app/reviews"
     );
     return result.data;
   }

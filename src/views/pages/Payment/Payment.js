@@ -15,8 +15,11 @@ const Payment = () => {
   const { appointmentID } = useParams();
   useEffect(() => {
     axios
-      .get(`https://health-services.vercel.app/appointment/${appointmentID}`)
+      .get(
+        `https://health-services-server-iota.vercel.app/orders/${appointmentID}`
+      )
       .then((res) => {
+        console.log(res.data);
         setUserInfo(res.data);
       });
   }, [appointmentID]);

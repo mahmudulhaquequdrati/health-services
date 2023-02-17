@@ -16,15 +16,18 @@ const AllAppointments = () => {
   const [allappointments, setAllappointments] = useState([]);
   useEffect(() => {
     axios
-      .get("https://health-services.vercel.app/userAppointments")
+      .get(
+        "https://health-services-server-iota.vercel.app/orders/allAppointmentOrders"
+      )
       .then((res) => {
+        // console.log(res.data)
         setAllappointments(res.data);
       });
   }, []);
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://health-services.vercel.app/appointment/${id}`)
+      .delete(`https://health-services-server-iota.vercel.app/orders/${id}`)
       .then((res) => {
         if (res.data.deletedCount) {
           alert("successfully appointment deleted");

@@ -5,7 +5,7 @@ export const getAppointments = createAsyncThunk(
   "appointmentsData",
   async () => {
     const result = await axios.get(
-      "https://health-services.vercel.app/appointments"
+      "https://health-services-server-iota.vercel.app/appointments"
     );
     return result.data;
   }
@@ -15,7 +15,10 @@ export const postAppointment = createAsyncThunk(
   "postAppointment",
   async (newData) => {
     await axios
-      .post("https://health-services.vercel.app/appointments", newData.newData)
+      .post(
+        "https://health-services-server-iota.vercel.app/orders",
+        newData.newData
+      )
       .then((res) => {
         if (res.data.insertedId) {
           newData.handleClose();

@@ -47,7 +47,7 @@ function AppointmentModal({ open, appointment, handleClose, date }) {
     dispatch(postAppointment(dataForApp));
     // axios
     //   .post(
-    //     "https://health-services.vercel.app/appointments",
+    //     "https://health-services-server-iota.vercel.app/appointments",
     //     newData
     //   )
     //   .then((res) => {

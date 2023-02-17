@@ -15,22 +15,25 @@ export default function UserAppointments({ date }) {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://health-services.vercel.app/userappointmentsED?email=${
-          user.email
-        }&date=${date.toLocaleDateString()}`,
-        {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        }
-      )
-      .then((res) => {
-        setAppointments(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, [user.email, date, token]);
+    if (user?.email) {
+      axios
+        .get(
+          `https://health-services-server-iota.vercel.app/orders/ed?email=${
+            user?.email
+          }&date=${date.toLocaleDateString()}`,
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          // console.log(res.data)
+          setAppointments(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [user?.email, date, token]);
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
